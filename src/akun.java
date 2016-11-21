@@ -1,10 +1,10 @@
 package tgsap2;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import tgsAP2.akun;
 
 public class akun extends javax.swing.JDialog {
-
+  private ArrayList<entitasAkun> listAkun = new ArrayList<entitasAkun>();
+   private DefaultTableModel tModel;
    
     public akun(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
