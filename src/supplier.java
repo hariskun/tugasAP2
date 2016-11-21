@@ -1,4 +1,4 @@
-package posapps;
+package tgsAP2;
 import entitas.entitasSupplier;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
@@ -13,6 +13,41 @@ public class supplier extends javax.swing.JDialog {
     public supplier(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        tampilList();
+    }
+     private void tampilList()
+    {
+        String[] kolom = {"Kode","Nama","Alamat","Telepon","Nama Kontak"};
+        Object[][] o = new Object[listSupplier.size()][5];
+        int i = 0;
+        for(entitasSupplier n : listSupplier)
+        {
+            String[] arr = {n.getKode(),n.getNama(),n.getAlamat(),n.getTelepon(),n.getNamaKontak()};
+            o[i] = arr;
+            i++;
+        }
+        tModel = new DefaultTableModel(o,kolom);
+       
+    }
+    
+    private void isiData()
+    {
+        entitasSupplier sup = new entitasSupplier();
+        sup.setKode(txtKode.getText());
+        sup.setNama(txtNama.getText());
+        sup.setAlamat(txtAlamat.getText());
+        sup.setTelepon(txtTelepon.getText());
+        sup.setNamaKontak(txtNk.getText());
+        listSupplier.add(sup);
+    }
+    
+    private void resetForm()
+    {
+        txtKode.setText("");
+        txtNama.setText("");
+        txtAlamat.setText("");
+        txtTelepon.setText("");
+        txtNk.setText("");
     }
 
     /**
