@@ -10,7 +10,9 @@ public class akun extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
           setLocationRelativeTo(this);
-      
+       cmbstatus.removeAllItems();
+       cmbstatus.addItem("Admin");
+       cmbstatus.addItem("Staff");
     }
    
        
